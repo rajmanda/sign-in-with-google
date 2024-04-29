@@ -1,0 +1,5 @@
+<ng-container *ngIf="userProfilex">
+  <div>Welcome, {{ userProfilex.name }}</div>
+  <app-user-card [userProfile]="userProfilex"></app-user-card>
+</ng-container>
+<button id="signout-button" (click)="handleSignOut()">Sign Out</button>
