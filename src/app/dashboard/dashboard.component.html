@@ -1,5 +1,37 @@
-<ng-container *ngIf="userProfilex">
-  <div>Welcome, {{ userProfilex.name }}</div>
-  <app-user-card [userProfile]="userProfilex"></app-user-card>
-</ng-container>
-<button id="signout-button" (click)="handleSignOut()">Sign Out</button>
+<mat-toolbar class="nav">
+  <button mat-icon-button  aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+
+  <div style="display: flex; align-items: center;">
+    <span>Welcome, {{ userProfilex.given_name }} {{ userProfilex.family_name }}!</span>
+    <!-- Add some horizontal space -->
+    <div style="width: 15px;"></div>
+  </div>
+
+
+  <!-- <mat-icon>favorite</mat-icon> -->
+  <div class="profile-photo">
+    <img [src]="userProfilex.picture" alt="Profile Photo" />
+  </div>
+
+  <!-- Button with an icon and text -->
+  <button mat-button (click)="handleSignOut()">
+
+    Sign Out
+  </button>
+</mat-toolbar>
+
+<!-- <div class="user-card">
+  <div class="profile-photo">
+    <img [src]="userProfile.picture" alt="Profile Photo" />
+  </div>
+  <div class="user-info">
+    <h2>{{ userProfile.given_name }} {{ userProfile.family_name }}</h2>
+    <p>{{ userProfile.email }}</p>
+    <p>ID: {{ userProfile.sub }}</p>
+  </div>
+</div> -->
+
