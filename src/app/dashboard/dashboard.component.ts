@@ -8,6 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider' ;
+import { AuthService } from "../auth.service";
 
 
 
@@ -21,16 +22,15 @@ declare var handleSignout: any; // Declare the global function to avoid TypeScri
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
-  constructor(private router: Router) {}
   userProfilex: any;
+
+  constructor(private authService: AuthService) {}
+
   ngOnInit() {
-    this.userProfilex = JSON.parse(sessionStorage.getItem("loggedInUser") || "");
+    this.userProfilex = this.authService.getUserProfile();
   }
+
   handleSignOut() {
-    handleSignout();
-    sessionStorage.removeItem("loggedInUser");
-    this.router.navigate(["/login"]).then(() => {
-      window.location.reload();
-    });
+    this.authService.signOut();
   }
 }
