@@ -2,11 +2,19 @@
   <button mat-icon-button  aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My App</span>
+  <!-- <span>My App</span> -->
+  <header class="brand-name">
+    <img
+      class="brand-logo"
+      src="/assets/logo.svg"
+      alt="logo"
+      aria-hidden="true"
+    />
+  </header>
   <span class="example-spacer"></span>
 
   <div style="display: flex; align-items: center;">
-    <span>Welcome, {{ userProfilex.given_name }} {{ userProfilex.family_name }}!</span>
+    <span>Hi, {{ userProfilex.given_name }} !</span>
     <!-- Add some horizontal space -->
     <div style="width: 15px;"></div>
   </div>

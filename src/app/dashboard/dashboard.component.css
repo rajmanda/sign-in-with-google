@@ -31,3 +31,8 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.brand-logo {
+  width: 100px;  /* Adjust the width as needed */
+  height: auto;  /* Maintain aspect ratio */
+}
