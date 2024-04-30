@@ -1,13 +1,22 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 import { UserCardComponent } from "../user-card/user-card.component";
 import { CommonModule } from "@angular/common";
+
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider' ;
+
+
+
 declare var handleSignout: any; // Declare the global function to avoid TypeScript errors
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, UserCardComponent],
+  imports: [CommonModule, UserCardComponent, MatCardModule, MatButtonModule, RouterModule, MatIconModule, MatToolbarModule, MatDividerModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
